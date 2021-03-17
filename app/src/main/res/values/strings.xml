@@ -1,5 +1,10 @@
 <resources>
+    //descrição de imagens
     <string name="app_name">Studio Ghibli API</string>
     <string name="img_totoro">totoro fofo de lado</string>
     <string name="img_logo">logo studio ghibli</string>
+
+    //hint
+    <string name="txt_pesquisa"> \uD83D\uDD0E Pesquisar</string>
+
 </resources>
