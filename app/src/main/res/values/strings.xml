@@ -5,6 +5,11 @@
     <string name="img_logo">logo studio ghibli</string>
 
     //hint
-    <string name="txt_pesquisa"> \uD83D\uDD0E Pesquisar</string>
+    <string name="txt_pesquisa"> Pesquisar</string>
 
+    //text
+    <string name="txt_ghibli">Pesquise uma obra ou personagem do universo Ghibli</string>
+
+    //button
+    <string name="btn_search"> &#128270; </string>
 </resources>
