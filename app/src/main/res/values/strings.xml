@@ -6,5 +6,5 @@
 
     //hint
     <string name="txt_pesquisa"> \uD83D\uDD0E Pesquisar</string>
-
+    <string name="teste">teste</string>
 </resources>
