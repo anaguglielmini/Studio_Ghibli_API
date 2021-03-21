@@ -51,10 +51,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:backgroundTint="#C6C6C6"
+                android:onClick="buscaGhibli"
                 android:text="@string/btn_search"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 app:cornerRadius="0dp" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

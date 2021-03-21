@@ -9,6 +9,10 @@
 
     //text
     <string name="txt_ghibli">Pesquise uma obra ou personagem do universo Ghibli</string>
+    <string name="loading">Carregando…</string>
+    <string name="no_search_term">Informe um termo de busca</string>
+    <string name="no_network">verifique sua conexão.</string>
+    <string name="no_results">"Nenhum resultado encontrado"</string>
 
     //button
     <string name="btn_search"> &#128270; </string>
