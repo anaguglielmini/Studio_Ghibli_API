@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     }
 
     public void buscaGhibli(View view) {
-        // Recupera a string de busca.
+        // Recupera a string de busca
         String queryString = nmFilme.getText().toString();
-        // esconde o teclado qdo o botão é clicado
+        // esconde o teclado quando clica no botão
         InputMethodManager inputManager = (InputMethodManager)
                 getSystemService(Context.INPUT_METHOD_SERVICE);
         if (inputManager != null) {

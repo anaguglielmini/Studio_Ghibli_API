@@ -17,8 +17,8 @@
         <TextView
             android:id="@+id/ghibli_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="casual"
+            android:layout_height="76dp"
+            android:fontFamily="serif"
             android:text="@string/txt_ghibli"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
@@ -55,12 +55,13 @@
                 android:text="@string/btn_search"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 app:cornerRadius="0dp" />
+
         </LinearLayout>
 
         <TextView
             android:id="@+id/txt_nome"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="46dp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
