@@ -17,11 +17,13 @@
         <TextView
             android:id="@+id/ghibli_text"
             android:layout_width="match_parent"
-            android:layout_height="76dp"
+            android:layout_height="68dp"
             android:fontFamily="serif"
             android:text="@string/txt_ghibli"
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
