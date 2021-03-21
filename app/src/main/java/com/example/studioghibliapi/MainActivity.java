@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             networkInfo = connMgr.getActiveNetworkInfo();
         }
         /* Se a rede estiver disponivel e o campo de busca não estiver vazio
-         iniciar o Loader CarregaLivros */
+         iniciar o Loader LoadGhibli */
         if (networkInfo != null && networkInfo.isConnected()
                 && queryString.length() != 0) {
             Bundle queryBundle = new Bundle();
