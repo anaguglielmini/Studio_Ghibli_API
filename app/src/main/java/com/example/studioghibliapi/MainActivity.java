@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 // move para a proxima linha
                 i++;
             }
-            //mostra o resultado qdo possivel.
+            //mostra o resultado quando possivel.
             if (titulo != null && autor != null) {
                 nmTitulo.setText(titulo);
                 //nmLivro.setText(R.string.str_empty);
