@@ -14,7 +14,7 @@ public class NetworkUtils {
     private static final String LOG_TAG = NetworkUtils.class.getSimpleName();
     // Constantes utilizadas pela API
     // URL para a API do Studio Ghibli.
-    private static final String GHIBLI_URL = "https://ghibliapi.herokuapp.com/#";
+    private static final String GHIBLI_URL = "https://ghibliapi.herokuapp.com/#tag/";
     // Parametros da string de Busca
     private static final String QUERY_PARAM = "q";
     // Limitador da qtde de resultados
