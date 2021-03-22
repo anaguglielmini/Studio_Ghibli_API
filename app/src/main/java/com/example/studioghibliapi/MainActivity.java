@@ -83,24 +83,20 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
         try {
             // Converte a resposta em Json
-            JSONObject jsonObject = new JSONObject(data);
-            // Obtem o JSONArray dos itens de livros
-            JSONArray itemsArray = jsonObject.getJSONArray("items");
+            // Obtem o JSONArray dos itens de films
+            JSONArray itemsArray = new JSONArray(data);
             // inicializa o contador
             int i = 0;
             String titulo = null;
-            String autor = null;
             // Procura pro resultados nos itens do array
             while (i < itemsArray.length() &&
-                    (autor == null && titulo == null)) {
+                    titulo == null) {
                 // Obtem a informação
-                JSONObject book = itemsArray.getJSONObject(i);
-                JSONObject volumeInfo = book.getJSONObject("volumeInfo");
+                JSONObject ghibli = itemsArray.getJSONObject(i);
                 //  Obter autor e titulo para o item,
                 // erro se o campo estiver vazio
                 try {
-                    titulo = volumeInfo.getString("title");
-                    autor = volumeInfo.getString("authors");
+                    titulo = ghibli.getString("title");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -108,9 +104,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 i++;
             }
             //mostra o resultado quando possivel.
-            if (titulo != null && autor != null) {
+            if (titulo != null) {
                 nmTitulo.setText(titulo);
-                //nmLivro.setText(R.string.str_empty);
             } else {
                 // If none are found, update the UI to show failed results.
                 nmTitulo.setText(R.string.no_results);

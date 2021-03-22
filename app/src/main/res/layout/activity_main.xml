@@ -45,7 +45,8 @@
 
                 android:hint="@string/txt_pesquisa"
 
-                android:inputType="text" />
+                android:inputType="textNoSuggestions"
+                android:maxLength="10000" />
 
             <Button
                 android:id="@+id/button"
@@ -63,7 +64,8 @@
         <TextView
             android:id="@+id/txt_nome"
             android:layout_width="match_parent"
-            android:layout_height="46dp" />
+            android:layout_height="46dp"
+            android:maxLength="10000" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

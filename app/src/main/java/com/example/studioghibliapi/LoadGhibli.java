@@ -8,14 +8,14 @@ import androidx.annotation.Nullable;
 public class LoadGhibli extends AsyncTaskLoader<String> {
     private String mQueryString;
     LoadGhibli(Context context, String queryString) {
-            super(context);
-            mQueryString = queryString;
-            }
+        super(context);
+        mQueryString = queryString;
+    }
     @Override
     protected void onStartLoading() {
-            super.onStartLoading();
-            forceLoad();
-            }
+        super.onStartLoading();
+        forceLoad();
+    }
     @Nullable
     @Override
     public String loadInBackground() {

@@ -13,6 +13,8 @@
     <string name="no_search_term">Informe um termo de busca</string>
     <string name="no_network">verifique sua conexão.</string>
     <string name="no_results">"Nenhum resultado encontrado"</string>
+    <string name="no_result">"Nenhresultado encontrado"</string>
+    <string name="str_empty">" "</string>
 
     //button
     <string name="btn_search"> &#128270; </string>

@@ -14,7 +14,7 @@ public class NetworkUtils {
     private static final String LOG_TAG = NetworkUtils.class.getSimpleName();
     // Constantes utilizadas pela API
     // URL para a API do Studio Ghibli.
-    private static final String GHIBLI_URL = "https://ghibliapi.herokuapp.com/#tag/";
+    private static final String GHIBLI_URL = "https://ghibliapi.herokuapp.com/films";
     // Parametros da string de Busca
     private static final String QUERY_PARAM = "q";
     // Limitador da qtde de resultados
@@ -30,7 +30,7 @@ public class NetworkUtils {
             Uri builtURI = Uri.parse(GHIBLI_URL).buildUpon()
                     .appendQueryParameter(QUERY_PARAM, queryString)
                     .appendQueryParameter(MAX_RESULTS, "10")
-                    .appendQueryParameter(TIPO_IMPRESSAO, "ghibli")
+                    .appendQueryParameter(TIPO_IMPRESSAO, "id")
                     .build();
             // Converte a URI para a URL.
             URL requestURL = new URL(builtURI.toString());
