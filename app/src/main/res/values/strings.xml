@@ -15,7 +15,17 @@
     <string name="no_results">"Nenhum resultado encontrado"</string>
     <string name="no_result">"Nenhresultado encontrado"</string>
     <string name="str_empty">" "</string>
+    <string name="txt_titulo">Título do Filme:</string>
+    <string name="txt_original">Título em Kanjis:</string>
+    <string name="txt_romanizado">Título Romanizado:</string>
+    <string name="txt_descricao">Descrição:</string>
+    <string name="txt_diretor">Diretor:</string>
+    <string name="txt_ano">Ano de Lançamento:</string>
+    <string name="txt_tempo">Tempo de Duração (secs): </string>
+    <string name="txt_score">Score:</string>
 
     //button
     <string name="btn_search"> &#128270; </string>
+    <string name="btn_voltar"><![CDATA[<- voltar]]></string>
+
 </resources>

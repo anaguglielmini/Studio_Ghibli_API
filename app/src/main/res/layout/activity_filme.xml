@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btnVoltar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Filme">
+
+    <TableLayout
+        android:id="@+id/tableLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:id="@+id/tblRowBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnVolta"
+                android:layout_width="153dp"
+                android:layout_height="match_parent"
+                android:text="@string/btn_voltar" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="46dp">
+
+            <TextView
+                android:id="@+id/txtTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/txt_titulo" />
+
+            <TextView
+                android:id="@+id/txtTitulo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtOriginal"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/txt_original" />
+
+            <TextView
+                android:id="@+id/txtOriginal2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtRomanizado"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/txt_romanizado" />
+
+            <TextView
+                android:id="@+id/txtRomanizado2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtDescricao"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:text="@string/txt_descricao" />
+
+            <TextView
+                android:id="@+id/txtDescricao2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtDiretor"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/txt_diretor" />
+
+            <TextView
+                android:id="@+id/txtDiretor2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtAno"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="@string/txt_ano" />
+
+            <TextView
+                android:id="@+id/txtAno2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtTempo"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="@string/txt_tempo" />
+
+            <TextView
+                android:id="@+id/txtTempo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtScore"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/txt_score" />
+
+            <TextView
+                android:id="@+id/txtScore2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+    </TableLayout>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/imageView4"
+        android:layout_width="203dp"
+        android:layout_height="252dp"
+        android:contentDescription="@string/img_totoro"
+        android:src="@drawable/totoro_bambole"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/totoro" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
