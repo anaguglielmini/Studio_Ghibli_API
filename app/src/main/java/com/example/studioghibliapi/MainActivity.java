@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private EditText nmFilme;
     private TextView nmTitulo;
     ListView listViewPesquisa;
-    dbHelper db;
+    dbHelper db = new dbHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

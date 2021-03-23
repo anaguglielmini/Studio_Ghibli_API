@@ -2,10 +2,14 @@ package com.example.studioghibliapi;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class dbHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "ghibli";
@@ -66,5 +70,19 @@ public class dbHelper extends SQLiteOpenHelper {
 
         db.insert(FILMS_TABLE_NAME, null, values);
         db.close();
+    }
+    public List<Films> listaTodosFilmes (){
+        List<Films> listarFilmes = new ArrayList();
+        String query = "SELECT * FROM " + FILMS_TABLE_NAME;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor c = db.rawQuery(query, null);
+
+        if(c.moveToFirst()){
+            do{
+                Films filme = new Films();
+                filme.setIdFilm(Integer.parseInt(c.getString(0)));
+            }
+        }
     }
 }
