@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private EditText nmFilme;
     private TextView nmTitulo;
     ListView listViewPesquisa;
+    dbHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         if (getSupportLoaderManager().getLoader(0) != null) {
             getSupportLoaderManager().initLoader(0, null, this);
         }
-
+        getSupportActionBar().hide();
         listViewPesquisa = (ListView) findViewById(R.id.listViewPesquisa);
     }
 
@@ -92,24 +93,43 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             // inicializa o contador
             int i = 0;
             String titulo = null;
+            String tituloOriginal = null;
+            String tituloRomanisado= null;
+            String descricao = null;
+            String diretor = null;
+            String ano = null;
+            String duracao = null;
+            String score = null;
             // Procura pro resultados nos itens do array
             while (i < itemsArray.length() &&
-                    titulo == null) {
+                    titulo == null && tituloOriginal == null && tituloRomanisado == null && descricao == null && diretor == null && ano == null && duracao == null && score == null) {
                 // Obtem a informação
                 JSONObject ghibli = itemsArray.getJSONObject(i);
                 //  Obter autor e titulo para o item,
                 // erro se o campo estiver vazio
                 try {
                     titulo = ghibli.getString("title");
+                    tituloOriginal = ghibli.getString("original_title");
+                    tituloRomanisado = ghibli.getString("original_title_romanised");
+                    descricao = ghibli.getString("description");
+                    diretor = ghibli.getString("director");
+                    ano = ghibli.getString("release_date");
+                    duracao = ghibli.getString("running_time");
+                    score = ghibli.getString("rt_score");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
                 // move para a proxima linha
                 i++;
+                try{
+                    db.addFilms(new Films(titulo, tituloOriginal, tituloRomanisado, descricao, diretor, ano, duracao, score));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
             //mostra o resultado quando possivel.
             if (titulo != null) {
-                nmTitulo.setText(titulo);
+                nmTitulo.setText(descricao);
             } else {
                 // If none are found, update the UI to show failed results.
                 nmTitulo.setText(R.string.no_results);
