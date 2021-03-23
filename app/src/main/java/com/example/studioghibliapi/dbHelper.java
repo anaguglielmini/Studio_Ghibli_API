@@ -83,6 +83,6 @@ public class dbHelper extends SQLiteOpenHelper {
                 Films filme = new Films();
                 filme.setIdFilm(Integer.parseInt(c.getString(0)));
             }
-        }
+        }//aaaaaaaaa
     }
 }
