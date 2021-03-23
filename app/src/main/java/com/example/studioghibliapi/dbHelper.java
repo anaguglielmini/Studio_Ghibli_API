@@ -81,8 +81,10 @@ public class dbHelper extends SQLiteOpenHelper {
         if(c.moveToFirst()){
             do{
                 Films filme = new Films();
-                filme.setIdFilm(Integer.parseInt(c.getString(0)));
-            }
-        }//aaaaaaaaa
+                filme.setIdFilm(Integer.parseInt(c.getString(0)));//me ajuda n sei oq é aqui aaaaa
+
+                listarFilmes.add(filme);
+            }while(c.moveToNext());
+        }return listarFilmes;
     }
 }
