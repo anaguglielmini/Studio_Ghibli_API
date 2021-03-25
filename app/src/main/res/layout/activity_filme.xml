@@ -61,13 +61,13 @@
                         android:layout_width="135dp"
                         android:layout_height="wrap_content"
                         android:text="@string/txt_original"
-                        android:textColor="#000000"/>
+                        android:textColor="#000000" />
 
                     <TextView
                         android:id="@+id/txtOriginal2"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textColor="#000000"/>
+                        android:textColor="#000000" />
                 </TableRow>
 
                 <TableRow
@@ -79,13 +79,13 @@
                         android:layout_width="124dp"
                         android:layout_height="wrap_content"
                         android:text="@string/txt_romanizado"
-                        android:textColor="#000000"/>
+                        android:textColor="#000000" />
 
                     <TextView
                         android:id="@+id/txtRomanizado2"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textColor="#000000"/>
+                        android:textColor="#000000" />
                 </TableRow>
 
                 <TableRow
@@ -97,7 +97,7 @@
                         android:layout_width="118dp"
                         android:layout_height="wrap_content"
                         android:text="@string/txt_descricao"
-                        android:textColor="#000000"/>
+                        android:textColor="#000000" />
 
                     <EditText
                         android:id="@+id/txtDesc"
@@ -109,6 +109,7 @@
                         android:enabled="false"
                         android:gravity="start|top"
                         android:inputType="textMultiLine"
+                        android:labelFor="@id/txtDescricao"
                         android:textColor="#000000"
                         android:textSize="14sp" />
 
@@ -123,13 +124,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/txt_diretor"
-                        android:textColor="#000000"/>
+                        android:textColor="#000000" />
 
                     <TextView
                         android:id="@+id/txtDiretor2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#000000"/>
+                        android:textColor="#000000" />
                 </TableRow>
 
                 <TableRow
@@ -141,13 +142,13 @@
                         android:layout_width="139dp"
                         android:layout_height="wrap_content"
                         android:text="@string/txt_ano"
-                        android:textColor="#000000"/>
+                        android:textColor="#000000" />
 
                     <TextView
                         android:id="@+id/txtAno2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:textColor="#000000"/>
+                        android:textColor="#000000" />
                 </TableRow>
 
                 <TableRow
@@ -159,13 +160,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/txt_tempo"
-                        android:textColor="#000000"/>
+                        android:textColor="#000000" />
 
                     <TextView
                         android:id="@+id/txtTempo2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:textColor="#000000"/>
+                        android:textColor="#000000" />
                 </TableRow>
 
                 <TableRow
@@ -177,14 +178,15 @@
                         android:layout_width="124dp"
                         android:layout_height="wrap_content"
                         android:text="@string/txt_score"
-                        android:textColor="#000000"/>
+                        android:textColor="#000000" />
 
                     <TextView
                         android:id="@+id/txtScore2"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textColor="#000000"/>
+                        android:textColor="#000000" />
                 </TableRow>
+
                 <pl.droidsonroids.gif.GifImageView
                     android:id="@+id/imageView4"
                     android:layout_width="121dp"

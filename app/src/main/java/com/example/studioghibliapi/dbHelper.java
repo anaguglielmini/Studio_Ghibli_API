@@ -13,7 +13,7 @@ import java.util.List;
 
 public class dbHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "ghiblistudio";
-    public static final int DATABASE_VERSION = 4;
+    public static final int DATABASE_VERSION = 5;
 
     //TABELA FILMS
     public static final String FILMS_TABLE_NAME = "TBfilms";
@@ -36,8 +36,8 @@ public class dbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String QUERY_FILMS = "CREATE TABLE " + FILMS_TABLE_NAME + "( " +
-                FILMS_COLUMN_ID + " INTEGER PRIMARY KEY UNIQUE, " +
-                FILMS_COLUMN_TITLE + " TEXT, " +
+                FILMS_COLUMN_ID + " INTEGER PRIMARY KEY, " +
+                FILMS_COLUMN_TITLE + " TEXT UNIQUE, " +
                 FILMS_COLUMN_ORIGINAL_TITLE + " TEXT, " +
                 FILMS_COLUMN_ORIGINAL_TITLE_ROMANISED + " TEXT, " +
                 FILMS_COLUMN_DESCRIPTION + " TEXT, " +

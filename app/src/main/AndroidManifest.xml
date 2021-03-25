@@ -12,8 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StudioGhibliAPI">
-        <activity android:name=".Filme"> </activity>
-        <activity android:name=".MainActivity"> </activity>
+        <activity
+            android:name=".Filme"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
         <activity android:name=".tela_inicio">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
