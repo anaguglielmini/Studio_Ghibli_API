@@ -13,16 +13,15 @@
     <string name="no_search_term">Informe um termo de busca</string>
     <string name="no_network">verifique sua conexão.</string>
     <string name="no_results">"Nenhum resultado encontrado"</string>
-    <string name="no_result">"Nenhresultado encontrado"</string>
     <string name="str_empty">" "</string>
     <string name="txt_titulo">Título do Filme:</string>
     <string name="txt_original">Título em Kanjis:</string>
-    <string name="txt_romanizado">Título Romanizado:</string>
+    <string name="txt_romanizado">Título Roman.:</string>
     <string name="txt_descricao">Descrição:</string>
     <string name="txt_diretor">Diretor:</string>
-    <string name="txt_ano">Ano de Lançamento:</string>
-    <string name="txt_tempo">Tempo de Duração (min): </string>
-    <string name="txt_score">Pontuação no Rotten Tomatoes:</string>
+    <string name="txt_ano">Ano lançamento:</string>
+    <string name="txt_tempo">Duração (min): </string>
+    <string name="txt_score">Pontuação:</string>
     <string name="resultado">Encontramos: </string>
 
     //button
