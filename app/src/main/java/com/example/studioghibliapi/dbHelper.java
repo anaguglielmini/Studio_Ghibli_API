@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class dbHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "ghibli";
-    public static final int DATABASE_VERSION = 1;
+    public static final String DATABASE_NAME = "ghiblistudio";
+    public static final int DATABASE_VERSION = 4;
 
     //TABELA FILMS
     public static final String FILMS_TABLE_NAME = "TBfilms";
@@ -36,7 +36,7 @@ public class dbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String QUERY_FILMS = "CREATE TABLE " + FILMS_TABLE_NAME + "( " +
-                FILMS_COLUMN_ID + " INTEGER PRIMARY KEY, " +
+                FILMS_COLUMN_ID + " INTEGER PRIMARY KEY UNIQUE, " +
                 FILMS_COLUMN_TITLE + " TEXT, " +
                 FILMS_COLUMN_ORIGINAL_TITLE + " TEXT, " +
                 FILMS_COLUMN_ORIGINAL_TITLE_ROMANISED + " TEXT, " +
@@ -71,6 +71,11 @@ public class dbHelper extends SQLiteOpenHelper {
         db.insert(FILMS_TABLE_NAME, null, values);
         db.close();
     }
+    public Cursor getData(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "SELECT * FROM TBfilms where idfilms ="+id+"", null );
+        return res;
+    }
     public List<Films> listaTodosFilmes (){
         List<Films> listarFilmes = new ArrayList();
         String query = "SELECT * FROM " + FILMS_TABLE_NAME;
@@ -81,7 +86,15 @@ public class dbHelper extends SQLiteOpenHelper {
         if(c.moveToFirst()){
             do{
                 Films filme = new Films();
-                filme.setIdFilm(Integer.parseInt(c.getString(0)));//me ajuda n sei oq é aqui aaaaa
+                filme.setId(Integer.parseInt(c.getString(0)));
+                filme.setTitle(c.getString(1));
+                filme.setOriginal(c.getString(2));
+                filme.setTitle_romanised(c.getString(3));
+                filme.setDescription(c.getString(4));
+                filme.setDirector(c.getString(5));
+                filme.setYear(c.getString(6));
+                filme.setTime(c.getString(7));
+                filme.setScore(c.getString(8));
 
                 listarFilmes.add(filme);
             }while(c.moveToNext());

@@ -15,7 +15,7 @@
         <TableLayout
             android:id="@+id/tableLayout3"
             android:layout_width="match_parent"
-            android:layout_height="399dp"
+            android:layout_height="364dp"
             android:layout_marginStart="2dp">
 
             <TableRow
@@ -27,6 +27,7 @@
                     android:id="@+id/btnVolta"
                     android:layout_width="153dp"
                     android:layout_height="match_parent"
+                    android:onClick="backButton"
                     android:text="@string/btn_voltar" />
 
             </TableRow>
@@ -80,8 +81,8 @@
             </TableRow>
 
             <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="300dp"
+                android:layout_height="66dp">
 
                 <TextView
                     android:id="@+id/txtDescricao"
@@ -92,7 +93,8 @@
                 <TextView
                     android:id="@+id/txtDescricao2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLength="300" />
             </TableRow>
 
             <TableRow
@@ -145,12 +147,12 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="57dp">
 
                 <TextView
                     android:id="@+id/txtScore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_width="170dp"
+                    android:layout_height="33dp"
                     android:text="@string/txt_score" />
 
                 <TextView
@@ -163,7 +165,7 @@
         <pl.droidsonroids.gif.GifImageView
             android:id="@+id/imageView4"
             android:layout_width="203dp"
-            android:layout_height="252dp"
+            android:layout_height="253dp"
             android:layout_gravity="center"
             android:contentDescription="@string/img_totoro"
             android:src="@drawable/totoro_bambole"

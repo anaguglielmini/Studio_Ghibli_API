@@ -21,8 +21,9 @@
     <string name="txt_descricao">Descrição:</string>
     <string name="txt_diretor">Diretor:</string>
     <string name="txt_ano">Ano de Lançamento:</string>
-    <string name="txt_tempo">Tempo de Duração (secs): </string>
-    <string name="txt_score">Score:</string>
+    <string name="txt_tempo">Tempo de Duração (min): </string>
+    <string name="txt_score">Pontuação no Rotten Tomatoes:</string>
+    <string name="resultado">Encontramos: </string>
 
     //button
     <string name="btn_search"> &#128270; </string>

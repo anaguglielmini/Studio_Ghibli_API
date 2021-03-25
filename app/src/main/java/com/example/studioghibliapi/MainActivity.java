@@ -1,11 +1,14 @@
 package com.example.studioghibliapi;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -20,11 +23,18 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
     private EditText nmFilme;
     private TextView nmTitulo;
     ListView listViewPesquisa;
+    List<Films> films;
     dbHelper db = new dbHelper(this);
+
+    ArrayAdapter<String> adapter;
+    ArrayList<String> arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +47,23 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         }
         getSupportActionBar().hide();
         listViewPesquisa = (ListView) findViewById(R.id.listViewPesquisa);
+
+        ListarFilmes();
+
+        listViewPesquisa.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3){
+                int id_To_Search = films.get(position).id;
+
+                Bundle dataBundle = new Bundle();
+                dataBundle.putInt("id", id_To_Search);
+
+                Intent intent = new Intent(getApplicationContext(), Filme.class);
+
+                intent.putExtras(dataBundle);
+                startActivity(intent);
+            }
+        });
     }
 
     public void buscaGhibli(View view) {
@@ -122,6 +149,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 // move para a proxima linha
                 i++;
                 try{
+                    this.finish();
+                    startActivity(new Intent(getBaseContext(), MainActivity.class));
                     db.addFilms(new Films(titulo, tituloOriginal, tituloRomanisado, descricao, diretor, ano, duracao, score));
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -129,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             }
             //mostra o resultado quando possivel.
             if (titulo != null) {
-                nmTitulo.setText(descricao);
+                nmTitulo.setText("Nós encontramos: " + titulo);
             } else {
                 // If none are found, update the UI to show failed results.
                 nmTitulo.setText(R.string.no_results);
@@ -143,6 +172,17 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public void onLoaderReset(@NonNull Loader<String> loader) {
         // obrigatório implementar, nenhuma ação executada
+    }
+    private void ListarFilmes(){
+        films = db.listaTodosFilmes();
+        arrayList = new ArrayList<String>();
+        adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, arrayList);
+        listViewPesquisa.setAdapter(adapter);
+
+        for(Films c: films){
+            arrayList.add(c.getTitle() + " - " + c.getYear());
+            adapter.notifyDataSetChanged();
+        }
     }
 
 }
