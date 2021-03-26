@@ -149,8 +149,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 // move para a proxima linha
                 i++;
                 try{
-                    this.finish();
                     startActivity(new Intent(getBaseContext(), MainActivity.class));
+                    this.finish();
                     db.addFilms(new Films(titulo, tituloOriginal, tituloRomanisado, descricao, diretor, ano, duracao, score));
                 } catch (Exception e) {
                     e.printStackTrace();
