@@ -27,19 +27,6 @@
             app:srcCompat="@drawable/logo" />
 
         <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/totoro_andando"
-            android:layout_width="wrap_content"
-            android:layout_height="383dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="83dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="84dp"
-            android:layout_marginBottom="174dp"
-            android:contentDescription="@string/img_totoro"
-            android:src="@drawable/totoro_andando"
-            app:srcCompat="@drawable/totoro" />
-
-        <pl.droidsonroids.gif.GifImageView
             android:id="@+id/catbus"
             android:layout_width="288dp"
             android:layout_height="399dp"
@@ -51,6 +38,19 @@
             android:contentDescription="@string/catbus"
             android:src="@drawable/catbus_claro"
             app:srcCompat="@drawable/catbus_claro" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/totoro_andando"
+            android:layout_width="wrap_content"
+            android:layout_height="383dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="83dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="84dp"
+            android:layout_marginBottom="174dp"
+            android:contentDescription="@string/img_totoro"
+            android:src="@drawable/totoro_andando"
+            app:srcCompat="@drawable/totoro" />
 
     </LinearLayout>
 
