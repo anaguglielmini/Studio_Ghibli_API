@@ -26,8 +26,16 @@
             android:contentDescription="@string/img_logo"
             app:srcCompat="@drawable/logo" />
 
+        <ImageView
+            android:id="@+id/catbus"
+            android:layout_width="246dp"
+            android:layout_height="308dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/catbus"
+            app:srcCompat="@drawable/catbus_claro" />
+
         <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/imageView"
+            android:id="@+id/totoro_andando"
             android:layout_width="wrap_content"
             android:layout_height="383dp"
             android:layout_gravity="center"
