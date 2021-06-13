@@ -26,12 +26,17 @@
             android:contentDescription="@string/img_logo"
             app:srcCompat="@drawable/logo" />
 
-        <ImageView
+        <pl.droidsonroids.gif.GifImageView
             android:id="@+id/catbus"
-            android:layout_width="246dp"
-            android:layout_height="308dp"
+            android:layout_width="288dp"
+            android:layout_height="399dp"
             android:layout_gravity="center"
+            android:layout_marginStart="83dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="84dp"
+            android:layout_marginBottom="174dp"
             android:contentDescription="@string/catbus"
+            android:src="@drawable/catbus_claro"
             app:srcCompat="@drawable/catbus_claro" />
 
         <pl.droidsonroids.gif.GifImageView

@@ -57,15 +57,18 @@ public class tela_inicio extends AppCompatActivity implements SensorEventListene
         sensorManager.registerListener((SensorEventListener) this,sensor,SensorManager.SENSOR_DELAY_NORMAL);
     }
 
+    //identificando se há luz ou não
     @Override
     public void onSensorChanged(SensorEvent event) {
+        //condição para se o hambiente estiver CLARO aparecer o totoro andando
         if (event.sensor.getType() == Sensor.TYPE_LIGHT) {
             if (event.values[0] == 0) {
-                catbus.setVisibility(View.GONE);
-                totoro.setVisibility(View.VISIBLE);
-            } else {
                 catbus.setVisibility(View.VISIBLE);
                 totoro.setVisibility(View.GONE);
+                //condição para se o hambiente estiver ESCURO colocar o gif do gatobus
+            } else {
+                catbus.setVisibility(View.GONE);
+                totoro.setVisibility(View.VISIBLE);
             }
         }
     }
