@@ -2,9 +2,13 @@ package com.example.studioghibliapi;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -15,7 +19,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
@@ -25,6 +31,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
     private EditText nmFilme;
@@ -35,6 +42,96 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     ArrayAdapter<String> adapter;
     ArrayList<String> arrayList;
+
+    Drawable mClearButtonImage;
+
+    public ghibli_input(Context context) {
+        super(context);
+        init();
+    }
+
+    public ghibli_input(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init();
+    }
+
+    public ghibli_input(Context context,
+                             AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init();
+    }
+
+    //metodo para inicialização do componente
+    private void init() {
+        // Inicializa o Drawable
+        mClearButtonImage = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_baseline_clear_opaque_24, null);
+
+        // define a ação do clique do botãoclique do botão.
+        setOnTouchListener(new View.OnTouchListener() {
+
+
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                // getCompoundDrawables()[2] :retorna um array de Drawables contendo start, top, end e bottom
+                // Se o Drawabale estiver no final do texto: [2].
+
+                if ((getCompoundDrawablesRelative()[2] != null)) {
+                    float clearButtonStart; // Linguagens LTR
+                    float clearButtonEnd;  //Linguagens RTL
+                    //um boolean que pode ser atualizado dinamicamente
+                    AtomicBoolean isClearButtonClicked = new AtomicBoolean(false);
+                    // detecta a direção do toque
+                    if (getLayoutDirection() == LAYOUT_DIRECTION_RTL) {
+                        // Se RTL, cola o botão na esquerda
+                        clearButtonEnd = mClearButtonImage
+                                .getIntrinsicWidth() + getPaddingStart();
+                        // se o toque ocorrer antes do fim do botão
+                        //  isClearButtonClicked definido como true.
+                        if (event.getX() < clearButtonEnd) {
+                            isClearButtonClicked.set(true);
+                        }
+                    } else {
+                        // Se o layout é LTR.
+
+                        clearButtonStart = (getWidth() - getPaddingEnd()
+                                - mClearButtonImage.getIntrinsicWidth());
+                        // Se o toque ocorrer depois do inicio do botão
+                        // isClearButtonClicked = true.
+                        if (event.getX() > clearButtonStart) {
+                            isClearButtonClicked.set(true);
+                        }
+
+                        // verifica o clique do botão
+                        if (isClearButtonClicked.get()) {
+                            // Verifica o ACTION_DOWN (sempre ocorre antes do ACTION_UP).
+                            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                                // troca a versão do botão
+                                mClearButtonImage =
+                                        ResourcesCompat.getDrawable(getResources(),
+                                                R.drawable.ic_baseline_clear_24, null);
+                                showClearButton();
+                            }
+                            // Verifica o  ACTION_UP.
+                            if (event.getAction() == MotionEvent.ACTION_UP) {
+                                // Troca pela versão opaca
+                                mClearButtonImage =
+                                        ResourcesCompat.getDrawable(getResources(),
+                                                R.drawable.ic_baseline_clear_opaque_24, null);
+                                // limpa o texto
+                                getText().clear();
+                                //esconde o botão
+                                hideClearButton();
+                                return true;
+                            }
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+                return false;
+            }
+        });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
