@@ -109,6 +109,9 @@ public class Filme<FireBase> extends AppCompatActivity {
         }
     }
     public void favoritar(View view){
+        Bundle extras = getIntent().getExtras();
+        if(extras != null){
+            int Value = extras.getInt("id");
             films = new Films();
             films.setId();
 
