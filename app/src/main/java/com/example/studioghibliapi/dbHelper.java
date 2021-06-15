@@ -26,10 +26,7 @@ public class dbHelper extends SQLiteOpenHelper {
     public static final String FILMS_COLUMN_RELEASE_DATE = "releaseDateFilms";
     public static final String FILMS_COLUMN_RUNNING_TIME = "runningTimeFilms";
     public static final String FILMS_COLUMN_RT_SCORE = "rtScoreFilms";
-
-    //TABELA FAVORITOS
-    public static final String FAVORITO_TABLE_NAME = "TBfavoritos";
-    public static final String FAVORITO_COLUMN_ID = "idfavorito";
+    public static final int FAVORITO_COLUMN_ID = Integer.parseInt("idfavorito");
 
 
     public dbHelper(@Nullable Context context) {
@@ -49,16 +46,28 @@ public class dbHelper extends SQLiteOpenHelper {
                 FILMS_COLUMN_DIRECTOR + " TEXT, " +
                 FILMS_COLUMN_RELEASE_DATE  + " TEXT, "+
                 FILMS_COLUMN_RUNNING_TIME +" TEXT, " +
-                FILMS_COLUMN_RT_SCORE +" TEXT " + ");";
+                FILMS_COLUMN_RT_SCORE +"TEXT," +
+                FAVORITO_COLUMN_ID +" INTEGER " + ");";
 
         db.execSQL(QUERY_FILMS);
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS " + FILMS_TABLE_NAME + ";" );
         onCreate(db);
     }
+
+    public void Favorito(Films films){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(String.valueOf(FAVORITO_COLUMN_ID),1);
+        db.execSQL(" " + FILMS_TABLE_NAME + " set " + FAVORITO_COLUMN_ID + " = " + 1 + " WHERE " +
+                FAVORITO_COLUMN_ID + " = ' " + films.getId() + " ' ; " );
+
+    }
+
     void addFilms (Films films){
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -72,6 +81,7 @@ public class dbHelper extends SQLiteOpenHelper {
         values.put(FILMS_COLUMN_RELEASE_DATE, films.getYear());
         values.put(FILMS_COLUMN_RUNNING_TIME, films.getTime());
         values.put(FILMS_COLUMN_RT_SCORE, films.getScore());
+        values.put(String.valueOf(FAVORITO_COLUMN_ID),0);
 
         db.insert(FILMS_TABLE_NAME, null, values);
         db.close();
@@ -87,6 +97,7 @@ public class dbHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         Cursor c = db.rawQuery(query, null);
+
 
         if(c.moveToFirst()){
             do{
@@ -105,11 +116,9 @@ public class dbHelper extends SQLiteOpenHelper {
             }while(c.moveToNext());
         }return listarFilmes;
     }
-
+/*
     //FAVORITOS
 
-
-    /*CRUD*/
 
 
     public void addToFavoritos (String idfavortio){
@@ -134,5 +143,5 @@ public class dbHelper extends SQLiteOpenHelper {
         }
         cursor.close();
         return true;
-    }
+    } */
 }

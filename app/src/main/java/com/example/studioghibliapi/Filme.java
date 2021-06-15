@@ -53,7 +53,7 @@ public class Filme<FireBase> extends AppCompatActivity {
         favaz = findViewById(R.id.btnFav);
         favc = findViewById(R.id.btnDesfav);
 
-
+/*
 
         favaz.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +62,7 @@ public class Filme<FireBase> extends AppCompatActivity {
                     db.addToFavoritos(new Favoritos());
                     Toast.makeText(Filme.this, "Filme adicionado aos favoritos", Toast.LENGTH_SHORT).show();
 
-        });
+        });**/
 
         //RESULTADO DA PESQUISA DE FILME
         Bundle extras = getIntent().getExtras();
