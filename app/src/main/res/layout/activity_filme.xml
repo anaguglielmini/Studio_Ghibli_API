@@ -47,7 +47,7 @@
                     android:src="@drawable/ic_baseline_favorite_24"
                     app:tint="@android:color/holo_red_dark"
                     android:visibility="gone"
-                    android:onClick="desfavoritarr"/>
+                    android:onClick="desfavoritar"/>
 
             </TableRow>
 

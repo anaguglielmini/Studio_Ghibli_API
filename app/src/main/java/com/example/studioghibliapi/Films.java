@@ -3,13 +3,23 @@ package com.example.studioghibliapi;
 public class Films {
     int id;
     String title;
-    String original;
-    String title_romanised;
+
+    public int getFavorito() {
+        return favorito;
+    }
+
+    public void setFavorito(int favorito) {
+        this.favorito = favorito;
+    }
+
+    public String original;
+    public String title_romanised;
     String description;
     String director;
     String year;
     String time;
     String score;
+    int favorito;
 
     public Films() {
     }
@@ -72,6 +82,9 @@ public class Films {
     public String getScore() {return score;}
 
     public void setScore(String score) {this.score = score;}
+
+    public void setId() {
+    }
 }
 
 

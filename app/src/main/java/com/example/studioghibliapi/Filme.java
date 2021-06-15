@@ -109,8 +109,13 @@ public class Filme<FireBase> extends AppCompatActivity {
         }
     }
     public void favoritar(View view){
+            films = new Films();
+            films.setId();
+
+
         favaz.setVisibility(View.GONE);
         favc.setVisibility(View.VISIBLE);
+
     }
 
     public void desfavoritar(View view){
@@ -123,5 +128,6 @@ public class Filme<FireBase> extends AppCompatActivity {
         startActivity(intent);
         this.finish();
     }
+
 
 }

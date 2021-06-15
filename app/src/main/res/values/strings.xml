@@ -31,5 +31,7 @@
     <string name="btn_search"> &#128270; </string>
     <string name="btn_voltar"><![CDATA[<- voltar]]></string>
     <string name="btncomp">Studio</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 
 </resources>

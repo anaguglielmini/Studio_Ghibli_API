@@ -59,7 +59,7 @@ public class dbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void Favorito(Films films){
+    public void addFavorito(Films films){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(String.valueOf(FAVORITO_COLUMN_ID),1);
@@ -67,6 +67,7 @@ public class dbHelper extends SQLiteOpenHelper {
                 FAVORITO_COLUMN_ID + " = ' " + films.getId() + " ' ; " );
 
     }
+    
 
     void addFilms (Films films){
         SQLiteDatabase db = this.getWritableDatabase();
