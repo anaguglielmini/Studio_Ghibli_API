@@ -39,7 +39,7 @@ public class tela_inicio extends AppCompatActivity implements SensorEventListene
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getBaseContext(), MainActivity.class));
+                startActivity(new Intent(getBaseContext(), Local.class));
                 finish();
             }
         },5000);

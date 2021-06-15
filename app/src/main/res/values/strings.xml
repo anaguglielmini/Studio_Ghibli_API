@@ -28,5 +28,5 @@
     //button
     <string name="btn_search"> &#128270; </string>
     <string name="btn_voltar"><![CDATA[<- voltar]]></string>
-
+    <string name="btncomp">estudio</string>
 </resources>
