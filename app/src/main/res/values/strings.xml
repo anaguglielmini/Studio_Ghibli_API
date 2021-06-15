@@ -4,6 +4,8 @@
     <string name="img_totoro">totoro fofo de lado</string>
     <string name="img_logo">logo studio ghibli</string>
     <string name="catbus">gatonibus andando no escuro</string>
+    <string name="favoritar1">pré favorito</string>
+    <string name="favoritar2">favorito</string>
 
     //hint
     <string name="txt_pesquisa"> Pesquisar</string>

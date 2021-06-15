@@ -7,197 +7,212 @@
     android:layout_height="match_parent"
     tools:context=".Filme">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btnVolta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="backButton"
-            android:text="@string/btn_voltar" />
-
-
-        <ScrollView
+        <TableLayout
+            android:id="@+id/tableLayout3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp">
 
-            <TableLayout
-                android:id="@+id/tableLayout3"
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="2dp">
+                android:layout_height="46dp">
 
-                <TableRow
+                <Button
+                    android:id="@+id/btnVolta"
                     android:layout_width="match_parent"
-                    android:layout_height="46dp">
+                    android:layout_height="wrap_content"
+                    android:onClick="backButton"
+                    android:text="@string/btn_voltar" />
 
-                    <TextView
-                        android:id="@+id/txtTitulo"
-                        android:layout_width="121dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/txt_titulo"
-                        android:textColor="#000000" />
+                <ImageButton
+                    android:id="@+id/btnFav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/favoritar1"
+                    android:onClick="favoritar"
+                    android:src="@drawable/ic_baseline_favorite_border_24"
+                    app:tint="@android:color/black" />
 
-                    <TextView
-                        android:id="@+id/txtTitulo2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:textColor="#000000" />
-                </TableRow>
+                <ImageButton
+                    android:id="@+id/btnDesfav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/favoritar1"
+                    android:src="@drawable/ic_baseline_favorite_24"
+                    app:tint="@android:color/holo_red_dark"
+                    android:visibility="gone"
+                    android:onClick="desfavoritar"/>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+            </TableRow>
 
-                    <TextView
-                        android:id="@+id/txtOriginal"
-                        android:layout_width="135dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/txt_original"
-                        android:textColor="#000000" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="46dp">
 
-                    <TextView
-                        android:id="@+id/txtOriginal2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:textColor="#000000" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/txtRomanizado"
-                        android:layout_width="124dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/txt_romanizado"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/txtRomanizado2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:textColor="#000000" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/txtDescricao"
-                        android:layout_width="118dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/txt_descricao"
-                        android:textColor="#000000" />
-
-                    <EditText
-                        android:id="@+id/txtDesc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:autofillHints=""
-                        android:clickable="false"
-                        android:ems="10"
-                        android:enabled="false"
-                        android:gravity="start|top"
-                        android:inputType="textMultiLine"
-                        android:labelFor="@id/txtDescricao"
-                        android:textColor="#000000"
-                        android:textSize="14sp" />
-
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/txtDiretor"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/txt_diretor"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/txtDiretor2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000000" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/txtAno"
-                        android:layout_width="139dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/txt_ano"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/txtAno2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:textColor="#000000" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/txtTempo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/txt_tempo"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/txtTempo2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:textColor="#000000" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="57dp">
-
-                    <TextView
-                        android:id="@+id/txtScore"
-                        android:layout_width="124dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/txt_score"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/txtScore2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:textColor="#000000" />
-                </TableRow>
-
-                <pl.droidsonroids.gif.GifImageView
-                    android:id="@+id/imageView4"
+                <TextView
+                    android:id="@+id/txtTitulo"
                     android:layout_width="121dp"
-                    android:layout_height="174dp"
-                    android:layout_gravity="center"
-                    android:contentDescription="@string/img_totoro"
-                    android:src="@drawable/totoro_bambole"
-                    app:srcCompat="@drawable/totoro" />
-            </TableLayout>
-        </ScrollView>
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_titulo"
+                    android:textColor="#000000" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/txtTitulo2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtOriginal"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_original"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/txtOriginal2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtRomanizado"
+                    android:layout_width="124dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_romanizado"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/txtRomanizado2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtDescricao"
+                    android:layout_width="118dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_descricao"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/txtDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:clickable="false"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    android:labelFor="@id/txtDescricao"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtDiretor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_diretor"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/txtDiretor2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtAno"
+                    android:layout_width="139dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_ano"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/txtAno2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtTempo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_tempo"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/txtTempo2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="57dp">
+
+                <TextView
+                    android:id="@+id/txtScore"
+                    android:layout_width="124dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_score"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/txtScore2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/imageView4"
+                android:layout_width="121dp"
+                android:layout_height="174dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/img_totoro"
+                android:src="@drawable/totoro_bambole"
+                app:srcCompat="@drawable/totoro" />
+        </TableLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

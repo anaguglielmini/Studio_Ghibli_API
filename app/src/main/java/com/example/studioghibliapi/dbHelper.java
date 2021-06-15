@@ -27,6 +27,11 @@ public class dbHelper extends SQLiteOpenHelper {
     public static final String FILMS_COLUMN_RUNNING_TIME = "runningTimeFilms";
     public static final String FILMS_COLUMN_RT_SCORE = "rtScoreFilms";
 
+    //TABELA FAVORITOS
+    public static final String FAVORITO_TABLE_NAME = "TBfavoritos";
+    public static final String FAVORITO_COLUMN_ID = "idfavorito";
+
+
     public dbHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -99,5 +104,35 @@ public class dbHelper extends SQLiteOpenHelper {
                 listarFilmes.add(filme);
             }while(c.moveToNext());
         }return listarFilmes;
+    }
+
+    //FAVORITOS
+
+
+    /*CRUD*/
+
+
+    public void addToFavoritos (String idfavortio){
+        SQLiteDatabase db = getReadableDatabase();
+        String query = String.format("INSERT INTO TBfavoritos(IdFavoritos) VALUES('%s');", idfavortio);
+        db.execSQL(query);
+    }
+
+    public void RemoveFromFavoritos (String idfavortio){
+        SQLiteDatabase db = getReadableDatabase();
+        String query = String.format("DELETE FROM TBfavoritos WHERE IdFavoritos='%s';", idfavortio);
+        db.execSQL(query);
+    }
+
+    public boolean isFavorito (String idfavortio){
+        SQLiteDatabase db = getReadableDatabase();
+        String query = String.format("SELECT * FROM TBfavoritos WHERE IdFavoritos='$s';", idfavortio);
+        Cursor cursor = db.rawQuery(query,null);
+        if(cursor.getCount()<=0){
+            cursor.close();
+            return false;
+        }
+        cursor.close();
+        return true;
     }
 }
