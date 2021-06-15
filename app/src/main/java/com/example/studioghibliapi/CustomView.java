@@ -11,6 +11,7 @@ import android.view.View;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatEditText;
 import androidx.core.content.res.ResourcesCompat;
 
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -29,7 +30,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
         - Se herdar da view prcisa desenhar a interface, sobrescrevendo o método onDraw
         - Quando herda de uma subclasse é possivel apenas sobrescrever para customizar
    */
-public class CustomView extends AppCompatActivity {
+public class CustomView extends AppCompatEditText {
 
     //define o drawable q será instanciado
     Drawable mClearButtonImage;

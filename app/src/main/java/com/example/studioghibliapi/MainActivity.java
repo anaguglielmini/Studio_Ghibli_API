@@ -12,6 +12,10 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,8 +31,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
-    private EditText nmFilme;
-    private TextView nmTitulo;
+    CustomView nmFilme;
+    TextView nmTitulo;
     ListView listViewPesquisa;
     List<Films> films;
     dbHelper db = new dbHelper(this);
@@ -40,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        nmFilme = findViewById(R.id.ghibli_input);
+        nmFilme = (CustomView)findViewById(R.id.ghibli_input);
         nmTitulo = findViewById(R.id.txt_nome);
         if (getSupportLoaderManager().getLoader(0) != null) {
             getSupportLoaderManager().initLoader(0, null, this);
