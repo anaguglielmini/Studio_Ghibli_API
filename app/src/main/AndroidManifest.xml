@@ -21,6 +21,7 @@
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SharedFavoritos" />
+        <activity android:name=".Local"/>
         <activity
             android:name=".tela_inicio"
             android:windowSoftInputMode="stateAlwaysHidden">

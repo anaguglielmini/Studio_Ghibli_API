@@ -28,12 +28,12 @@ public class Filme<FireBase> extends AppCompatActivity {
     Films films;
     dbHelper db = new dbHelper(this);
 
-    //Favorites
+    /*//Favorites
     dbHelper localDB;
     FirebaseDatabase database;
     DatabaseReference filme;
     private Query adapter;
-
+*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +86,6 @@ public class Filme<FireBase> extends AppCompatActivity {
                     films.setScore(rs.getString(rs.getColumnIndex(db.FILMS_COLUMN_RT_SCORE)));*/
 
                     //código "limpo" segundo o Android Studio, apenas para não ter mais warnings de static member accessed via instance reference
-                    films.setId(rs.getInt(rs.getColumnIndex(dbHelper.FILMS_COLUMN_ID)));
                     films.setTitle(rs.getString(rs.getColumnIndex(dbHelper.FILMS_COLUMN_TITLE)));
                     films.setOriginal(rs.getString(rs.getColumnIndex(dbHelper.FILMS_COLUMN_ORIGINAL_TITLE)));
                     films.setTitle_romanised(rs.getString(rs.getColumnIndex(dbHelper.FILMS_COLUMN_ORIGINAL_TITLE_ROMANISED)));
@@ -109,8 +108,7 @@ public class Filme<FireBase> extends AppCompatActivity {
             txtScore2.setText(films.getScore());
         }
     }
-    /*public void favoritar(View view){
-        db.addFavorito(films);
+    public void favoritar(View view){
 
         favaz.setVisibility(View.GONE);
         favc.setVisibility(View.VISIBLE);
@@ -130,7 +128,7 @@ public class Filme<FireBase> extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
         this.finish();
-    }*/
+    }
 
 
 }

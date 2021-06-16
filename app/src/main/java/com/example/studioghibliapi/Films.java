@@ -2,7 +2,7 @@ package com.example.studioghibliapi;
 
 public class Films {
     int id;
-    int favorito;
+   // int favorito;
     String title;
 
 
@@ -17,7 +17,7 @@ public class Films {
     public Films() {
     }
 
-    public Films(int _id, String _title, String _original, String _title_romanised, String _description, String _director, String _year, String _time, String _score, int _favorito) {
+    public Films(int _id, String _title, String _original, String _title_romanised, String _description, String _director, String _year, String _time, String _score/*, int _favorito*/) {
         this.id = _id;
         this.title = _title;
         this.original = _original;
@@ -27,7 +27,7 @@ public class Films {
         this.year = _year;
         this.time = _time;
         this.score = _score;
-        this.favorito = _favorito;
+       // this.favorito = _favorito;
     }
 
     public Films(String _title, String _original, String _title_romanised, String _description, String _director, String _year, String _time, String _score) {
@@ -68,8 +68,8 @@ public class Films {
     public String getScore() {return score;}
     public void setScore(String score) {this.score = score;}
 
-    public int getFavorito() {return favorito;}
-    public void setFavorito(int favorito) {this.favorito = favorito;}
+    /*public int getFavorito() {return favorito;}
+    public void setFavorito(int favorito) {this.favorito = favorito;}*/
 }
 
 
