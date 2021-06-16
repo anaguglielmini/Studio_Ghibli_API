@@ -86,6 +86,7 @@ public class Filme<FireBase> extends AppCompatActivity {
                     films.setScore(rs.getString(rs.getColumnIndex(db.FILMS_COLUMN_RT_SCORE)));*/
 
                     //código "limpo" segundo o Android Studio, apenas para não ter mais warnings de static member accessed via instance reference
+                    films.setId(rs.getInt(rs.getColumnIndex(dbHelper.FILMS_COLUMN_ID)));
                     films.setTitle(rs.getString(rs.getColumnIndex(dbHelper.FILMS_COLUMN_TITLE)));
                     films.setOriginal(rs.getString(rs.getColumnIndex(dbHelper.FILMS_COLUMN_ORIGINAL_TITLE)));
                     films.setTitle_romanised(rs.getString(rs.getColumnIndex(dbHelper.FILMS_COLUMN_ORIGINAL_TITLE_ROMANISED)));
@@ -109,11 +110,10 @@ public class Filme<FireBase> extends AppCompatActivity {
         }
     }
     public void favoritar(View view){
-        Bundle extras = getIntent().getExtras();
-        if(extras != null){
-            int Value = extras.getInt("id");
-            films = new Films();
-            films.setId();
+        db.addFavorito(films);
+
+        favaz.setVisibility(View.GONE);
+        favc.setVisibility(View.VISIBLE);
 
 
         favaz.setVisibility(View.GONE);

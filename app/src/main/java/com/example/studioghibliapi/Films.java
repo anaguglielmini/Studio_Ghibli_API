@@ -2,17 +2,17 @@ package com.example.studioghibliapi;
 
 public class Films {
     int id;
+    int favorito;
     String title;
 
 
-    public String original;
-    public String title_romanised;
+    String original;
+    String title_romanised;
     String description;
     String director;
     String year;
     String time;
     String score;
-    int favorito;
 
     public Films() {
     }

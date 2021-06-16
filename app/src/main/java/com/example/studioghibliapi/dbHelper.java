@@ -26,7 +26,7 @@ public class dbHelper extends SQLiteOpenHelper {
     public static final String FILMS_COLUMN_RELEASE_DATE = "releaseDateFilms";
     public static final String FILMS_COLUMN_RUNNING_TIME = "runningTimeFilms";
     public static final String FILMS_COLUMN_RT_SCORE = "rtScoreFilms";
-    public static final int FAVORITO_COLUMN_ID = Integer.parseInt("idfavorito");
+    public static final String FAVORITO_COLUMN_ID = "idfavorito";
 
 
     public dbHelper(@Nullable Context context) {
@@ -47,7 +47,7 @@ public class dbHelper extends SQLiteOpenHelper {
                 FILMS_COLUMN_RELEASE_DATE  + " TEXT, "+
                 FILMS_COLUMN_RUNNING_TIME +" TEXT, " +
                 FILMS_COLUMN_RT_SCORE +"TEXT," +
-                FAVORITO_COLUMN_ID +" INTEGER " + ");";
+                FAVORITO_COLUMN_ID +" TEXT " + ");";
 
         db.execSQL(QUERY_FILMS);
     }
@@ -82,7 +82,7 @@ public class dbHelper extends SQLiteOpenHelper {
         values.put(FILMS_COLUMN_RELEASE_DATE, films.getYear());
         values.put(FILMS_COLUMN_RUNNING_TIME, films.getTime());
         values.put(FILMS_COLUMN_RT_SCORE, films.getScore());
-        values.put(String.valueOf(FAVORITO_COLUMN_ID),0);
+        values.put(FAVORITO_COLUMN_ID,0);
 
         db.insert(FILMS_TABLE_NAME, null, values);
         db.close();
