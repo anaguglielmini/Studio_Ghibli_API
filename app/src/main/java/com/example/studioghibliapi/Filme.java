@@ -109,7 +109,7 @@ public class Filme<FireBase> extends AppCompatActivity {
             txtScore2.setText(films.getScore());
         }
     }
-    public void favoritar(View view){
+    /*public void favoritar(View view){
         db.addFavorito(films);
 
         favaz.setVisibility(View.GONE);
@@ -130,7 +130,7 @@ public class Filme<FireBase> extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
         this.finish();
-    }
+    }*/
 
 
 }

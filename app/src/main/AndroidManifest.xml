@@ -15,15 +15,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StudioGhibliAPI">
+        <activity android:name=".Loader"></activity>
         <activity
             android:name=".Filme"
             android:windowSoftInputMode="stateAlwaysHidden" />
-
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".SharedFavoritos"/>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SharedFavoritos" />
         <activity
             android:name=".tela_inicio"
-            android:windowSoftInputMode="stateAlwaysHidden" >
+            android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,6 +31,17 @@
             </intent-filter>
         </activity>
 
+        <service android:name=".FetchAddressIntentService" />
+
+        <receiver android:name=".Geolocalizacao">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/geolocalizacao_info" />
+        </receiver>
     </application>
 
 </manifest>
